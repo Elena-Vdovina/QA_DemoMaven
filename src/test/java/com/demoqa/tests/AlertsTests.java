@@ -24,13 +24,23 @@ public class AlertsTests extends TestBase {
     new AlertsPage(wd).alertButton();
   }
 
-  @Test
+  @Test  // 1 variant
   public void timeAlertButtonTest() {
     new AlertsPage(wd).timerAlertButton();
   }
 
-  @Test
+  @Test  // 2 variant
+  public void waitOfAlertTest(){
+    new AlertsPage(wd).acceptTimerAlert();
+  }
+
+  @Test // 1 variant
   public void confirmAlertButtonOkTest() {
     new AlertsPage(wd).confirmAlertButton().assertOkMessage();
+  }
+
+  @Test
+  public void confirmAlertTest(){
+    new AlertsPage(wd).selectAlertConfirm("Cancel").assertConfirm("You selected Cancel");
   }
 }

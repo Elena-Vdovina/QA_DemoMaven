@@ -33,4 +33,12 @@ public class HomePage extends BasePage {
     clickWithJSExecutor(Interactions, 0, 300);
     return new SidePanel(wd);
   }
+
+  @FindBy(xpath = "//h5[.='Forms']")
+  WebElement forms;
+
+  public SidePanel getForms() {
+    clickWithJSExecutor(forms, 0, 300);
+    return new SidePanel(wd);
+  }
 }
