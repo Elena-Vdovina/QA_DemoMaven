@@ -21,7 +21,7 @@ public class PracticeFormTests extends TestBase {
         .enterPersonalData("Ivan", "Ivanov", "ii@gmail.com", "1234567890")
         .selectGender("Male")
         //.typeData("07 July 2000")
-        .selectDate("August","2000","14")
+        .selectDate("August", "2000", "14")
         .addSubject(new String[]{"Maths", "English", "Chemistry"})
         .selectHobby(new String[]{"Sports", "Reading", "Music"})
         .uploadFile("C:/Tools/logo192.png")
@@ -34,7 +34,7 @@ public class PracticeFormTests extends TestBase {
   @Test
   public void fillPracticeFormTestWithFinalData() {
     new PracticeFormPage(wd).enterPersonalData(StudentData.FIRST_NAME, StudentData.LAST_NAME,
-        StudentData.EMAIL, StudentData.PHONE_NUMBER)
+            StudentData.EMAIL, StudentData.PHONE_NUMBER)
         .selectGender(StudentData.GENDER)
         .typeData(StudentData.B_DAY)
         .addSubject(StudentData.SUBJECTS)
@@ -42,7 +42,9 @@ public class PracticeFormTests extends TestBase {
         .uploadFile(StudentData.PHOTO_PATH)
         .enterAddress(StudentData.ADDRESS)
         .selectState(StudentData.STATE)
-        .selectCity(StudentData.CITY);
+        .selectCity(StudentData.CITY)
+        .submit()
+        .assertForm();
   }
 
 }
